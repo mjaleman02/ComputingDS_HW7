@@ -14,7 +14,7 @@ app = FastAPI()
 
 ModelInput = create_model('ModelInput', **{name: (float, ...) for name in feature_names})
 
-# Define the endpoint
+# Define the endpoint 
 @app.post("/predict")
 async def predict(input_data: ModelInput):
     input_df = pd.DataFrame([input_data.dict()])
